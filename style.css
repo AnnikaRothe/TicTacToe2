@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-image: url('./img/hintergrund.jpg');
+    opacity: 0.35;
+    z-index: -1;
+}
+
+#mainSection {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playerDisplay {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+
+.player {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: solid transparent;
+    border-radius: 5px;
+}
+
+.player img {
+    margin-left: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.highlightPlayer {
+    background-color: rgba(4, 141, 27, 0.122);
+}
+
+tr {
+    width: 399px;
+}
+
+td {
+    width: 133px;
+    height: 133px;
+    border: solid 5px black;
+    position: relative;
+}
+
+.tdHover:hover {
+    cursor: pointer;
+    background-color: rgba(4, 141, 27, 0.122);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table tr:first-child td {
+    border-top: 0;
+}
+
+table tr td:first-child {
+    border-left: 0;
+}
+
+table tr:last-child td {
+    border-bottom: 0;
+}
+
+table tr td:last-child {
+    border-right: 0;
+}
+
+.selectField {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 26px;
+    bottom: 0px;
+    left: 26px;
+    right: 0px;
+}
+
+.d-none {
+    display: none;
+}
+
+.highlightRow img {
+    animation: highlightField 250ms ease-in-out;
+}
+
+.highlightWinningRow {
+    animation: highlightrow 600ms ease-in-out;
+    animation-iteration-count: 4;
+
+}
+
+@keyframes highlightField {
+    from {
+        scale: 1.3;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+@keyframes highlightrow {
+    from {
+        background-color: rgba(14, 159, 11, 0.6);
+    }
+
+    to {
+        background-color: rgba(255, 255, 255);
+    }
+}
+
+.restartBtn {
+    background-color: rgba(195, 195, 195, 0.4);
+    border: dotted 5px rgb(9, 146, 9);
+    font-size: 30px;
+
+}
+
+
+.restartBtn:hover {
+    cursor: pointer;
+    background-color: rgba(195, 195, 195, 0.8);
+    transition: all ease-in-out 250ms;
+}
+
+.resultDisplay {
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.game-over-img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+    border: 5px dotted green;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        border-width: 5px;
+    }
+
+    50% {
+        border-width: 10px;
+    }
+
+    100% {
+        border-width: 5px;
+    }
+}
+
+.game-over-img:hover {
+    content: url('./img/replay.png');
+    animation: bounce 0.5s;
+    animation-fill-mode: forwards;
+}
+
+
+
+
+@media (max-width: 500px) {
+    .playerDisplay {
+        flex-direction: column;
+        width: 200px;
+    }
+
+    tr {
+        width: 279px;
+    }
+
+    td {
+        width: 93px;
+        height: 93px;
+    }
+
+    .selectField {
+        width: 60px;
+        height: 60px;
+        top: 18px;
+        bottom: 0px;
+        left: 18px;
+        right: 0px;
+    }
+
+    .resultDisplay h1 {
+        font-size: 20px;
+    }
+
+    .player img {
+        width: 60px;
+        height: 60px;
+    }
+}
